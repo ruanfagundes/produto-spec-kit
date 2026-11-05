@@ -20,6 +20,8 @@ Import `StepBase`, `StepContext`, `StepResult`, and `StepStatus` from `specify_c
 | `StepResult.next_steps` | Nested expansion, default empty |
 | `StepResult.error` | Error message for failure, otherwise null |
 
+`StepContext.default_reasoning_effort` and `StepContext.default_context_size` hold the workflow's `reasoning_effort` and `context_size` defaults as written, or `None` when absent. Like `default_model`, they can contain unevaluated expressions. They follow the existing fields, so existing positional construction is unchanged.
+
 Implementations must guard invalid configuration during execution as well as validation. The engine persists results and controls lifecycle state; steps do not own checkpoint transitions.
 
 ## Step Registry
